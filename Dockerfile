@@ -32,10 +32,6 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     python-virtualenv \
     glpk-utils
     
-RUN apt-get -y update
-RUN apt-get -y install nodejs
-RUN apt-get -y install npm
-
 # Add files.
 ADD root/.bashrc /root/.bashrc
 ADD root/.gitconfig /root/.gitconfig
