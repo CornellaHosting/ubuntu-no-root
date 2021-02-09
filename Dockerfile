@@ -33,6 +33,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     glpk-utils
     
 RUN curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.35.3/install.sh -o install_nvm.sh
+RUN bash install_nvm.sh
 RUN nvm install 12.18.3
 RUN nvm use 12.18.3
 
