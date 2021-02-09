@@ -25,7 +25,7 @@ ADD root/.scripts /root/.scripts
 # Set environment variables.
 # ENV USER user
 ENV PASS password
-ENV USER
+ENV USER=test
 
 RUN groupadd -g 61000 $USER
 RUN useradd -g 61000 -l -m -s /bin/false -u 61000 -p $(openssl passwd -1 "$PASS") $USER
