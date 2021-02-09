@@ -25,8 +25,9 @@ ADD root/.scripts /root/.scripts
 # Set environment variables.
 ENV USER user
 
-# Create user
-USER $USER
+RUN groupadd -g 61000 app
+RUN useradd -g 61000 -l -m -s /bin/false -u 61000 app
+USER app
 
 # Define working directory.
 WORKDIR /home/$USER
