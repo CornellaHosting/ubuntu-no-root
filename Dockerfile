@@ -25,15 +25,11 @@ ADD root/.scripts /root/.scripts
 # Set environment variables.
 # ENV USER user
 ENV PASS password
+ARG USER
 
-RUN if [[ -z "$USER" ]] ; then echo Argument not provided ; else groupadd -g 61000 $USER; fi
-RUN if [[ -z "$USER" ]] ; then echo Argument not provided ; else useradd -g 61000 -l -m -s /bin/false -u 61000 -p $(openssl passwd -1 "$PASS") $USER -g 61000 $USER; fi
-RUN if [[ -z "$USER" ]] ; then echo Argument not provided ; else USER $USER; fi
-
-
-# RUN groupadd -g 61000 $USER
-# RUN useradd -g 61000 -l -m -s /bin/false -u 61000 -p $(openssl passwd -1 "$PASS") $USER
-# USER $USER
+RUN groupadd -g 61000 $USER
+RUN useradd -g 61000 -l -m -s /bin/false -u 61000 -p $(openssl passwd -1 "$PASS") $USER
+USER $USER
 
 # Define working directory.
 WORKDIR /home/$USER
