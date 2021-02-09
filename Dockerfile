@@ -23,10 +23,13 @@ ADD root/.gitconfig /root/.gitconfig
 ADD root/.scripts /root/.scripts
 
 # Set environment variables.
-ENV HOME /root
+ENV USER user
+
+# Create user
+USER $USER
 
 # Define working directory.
-WORKDIR /root
+WORKDIR /home/$USER
 
 # Define default command.
 CMD ["bash"]
