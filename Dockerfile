@@ -23,7 +23,7 @@ ADD root/.gitconfig /root/.gitconfig
 ADD root/.scripts /root/.scripts
 
 # Set environment variables.
-ENV USER user
+# ENV USER user
 ENV PASS password
 
 RUN groupadd -g 61000 $USER
