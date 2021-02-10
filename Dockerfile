@@ -30,8 +30,10 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     python3-pip \
     python3.5-dev \
     python-virtualenv \
-    glpk-utils
-    
+    glpk-utils \
+    openssh-server \
+    sudo
+
 # Add files.
 ADD root/.bashrc /root/.bashrc
 ADD root/.gitconfig /root/.gitconfig
