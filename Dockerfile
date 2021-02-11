@@ -37,7 +37,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     default-jdk \
     nodejs
 
-RUN 
+
 # Add files.
 ADD root/.bashrc /root/.bashrc
 ADD root/.gitconfig /root/.gitconfig
