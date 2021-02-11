@@ -32,8 +32,12 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     python-virtualenv \
     glpk-utils \
     openssh-server \
-    sudo
+    sudo \
+    default-jre \
+    default-jdk \
+    nodejs
 
+RUN 
 # Add files.
 ADD root/.bashrc /root/.bashrc
 ADD root/.gitconfig /root/.gitconfig
