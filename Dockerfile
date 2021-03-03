@@ -41,15 +41,13 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
 
 
 # Add files.
-ADD root/.bashrc /root/.bashrc
-ADD root/.gitconfig /root/.gitconfig
-ADD root/.scripts /root/.scripts
+ADD root/.scripts /home/.scripts
 
 # RUN nvm install 12
 
-RUN /root/.scripts/install-node.sh
+RUN /home/.scripts/install-node.sh
+
 # Set environment variables.
-ENV PASS=password
 ENV USER=user
 
 RUN groupadd -g 61000 $USER
