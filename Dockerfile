@@ -40,13 +40,6 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     default-jdk
 
 
-# Add files.
-ADD root/.scripts /home/.scripts
-
-# RUN nvm install 12
-
-RUN bash /home/.scripts/install-node.sh
-
 # Set environment variables.
 ENV USER=user
 
