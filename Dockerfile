@@ -45,7 +45,7 @@ ADD root/.scripts /home/.scripts
 
 # RUN nvm install 12
 
-RUN /home/.scripts/install-node.sh
+RUN bash /home/.scripts/install-node.sh
 
 # Set environment variables.
 ENV USER=user
