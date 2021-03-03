@@ -17,6 +17,11 @@ RUN \
   apt-get install -y byobu curl git htop man unzip vim wget && \
   rm -rf /var/lib/apt/lists/*
 
+# Install nvm (for node)
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+
+RUN nvm install 12
+
 # Install Python + Node.js and other stuff
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
@@ -34,8 +39,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     openssh-server \
     sudo \
     default-jre \
-    default-jdk \
-    nodejs
+    default-jdk
 
 
 # Add files.
