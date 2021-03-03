@@ -20,8 +20,6 @@ RUN \
 # Install nvm (for node)
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 
-RUN nvm install 12
-
 # Install Python + Node.js and other stuff
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
@@ -47,6 +45,9 @@ ADD root/.bashrc /root/.bashrc
 ADD root/.gitconfig /root/.gitconfig
 ADD root/.scripts /root/.scripts
 
+# RUN nvm install 12
+
+RUN /root/.scripts/install-node.sh
 # Set environment variables.
 ENV PASS=password
 ENV USER=user
