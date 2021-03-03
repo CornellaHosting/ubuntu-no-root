@@ -40,8 +40,10 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     default-jdk
 
 
+
+
 # Set environment variables.
-ENV USER=user
+ENV USER=cornella
 
 RUN groupadd -g 61000 $USER
 RUN useradd -g 61000 -l -m -s /bin/false -u 61000 $USER
@@ -49,6 +51,8 @@ USER $USER
 
 # Define working directory.
 WORKDIR /home/$USER
+
+RUN echo "export PS1='\[\033[38;5;46m\]@\[$(tput sgr0)\]\[\033[38;5;47m\]\u\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;12m\]\w\[$(tput sgr0)\]\\$ \[$(tput sgr0)\]'" > /home/$USER/.bashrc
 
 # Define default command.
 CMD ["bash"]
